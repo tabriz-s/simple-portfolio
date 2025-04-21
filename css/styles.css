@@ -1,0 +1,382 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', monospace;
+  background-color: #1a1a1a;
+  color: #fff;
+  line-height: 1.6;
+}
+
+a {
+  color: #57abff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f2e57f;
+}
+
+/* Navbar */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 10px 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar ul li {
+  margin: 0 15px;
+}
+
+#navbar ul li a {
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+/* Welcome Section */
+#welcome-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  animation: pixelate 2s infinite;
+}
+
+#welcome-section h1 {
+  font-size: 3rem;
+  margin: 0;
+  animation: glow 2s infinite alternate;
+}
+
+#welcome-section p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.pixel-arrow {
+  font-size: 2rem;
+  margin-top: 20px;
+  animation: bounce 1.5s infinite;
+}
+
+/* Projects Section */
+#projects {
+  padding: 60px 20px;
+  background-color: #222;
+}
+
+#projects h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  animation: glow 2s infinite alternate;
+}
+
+.project-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project-tile {
+  background-color: #333;
+  border: 4px solid #57abff;
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #f2e57f;
+}
+
+.project-tile img {
+  width: 100%;
+  height: auto;
+}
+
+.project-tile p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* Contact Section */
+#contact {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #333, #1a1a1a);
+}
+
+#contact h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  animation: glow 2s infinite alternate;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-links a {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: 2px solid #00ff00;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-links a:hover {
+  background-color: #f2e57f;
+  color: #1a1a1a;
+  transform: scale(1.2);
+}
+
+.contact-links i {
+  margin-right: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  border-top: 2px solid #57abff;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ff00ff;
+}
+
+footer a:hover {
+  color: #f2e57f;
+}
+
+/* Glitch Text */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.glitch-text:hover {
+  animation: glitch 0.2 infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glitch-text::before {
+  color: #96bcfe;
+  z-index: -1;
+  animation: glitch-before 0.2s infinite;
+}
+
+.glitch-text::after {
+  color: #f86b44;
+  z-index: -2;
+  animation: glitch-after 0.2s infinite;
+}
+
+.glitch-text:hover::before,
+.glitch-text:hover::after {
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px 0 #96bcfe, -2px -2px 0 #f86b44;
+    transform: translate(0);
+  }
+  25% {
+    text-shadow: -2px -2px 0 #96bcfe, 2px 2px 0 #f86b44;
+    transform: translate(-2px, 2px);
+  }
+  50% {
+    text-shadow: 2px -2px 0 #96bcfe, -2px 2px 0 #f86b44;
+    transform: translate(2px, -2px);
+  }
+  75% {
+    text-shadow: -2px 2px 0 #96bcfe, 2px -2px 0 #f86b44;
+    transform: translate(-2px, 2px);
+  }
+  100% {
+    text-shadow: 2px 2px 0 #96bcfe, -2px -2px 0 #f86b44;
+    transform: translate(0);
+  }
+}
+
+@keyframes glitch-before {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(-4px, 4px);
+  }
+  50% {
+    transform: translate(4px, -4px);
+  }
+  75% {
+    transform: translate(-4px, 4px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes glitch-after {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(4px, -4px);
+  }
+  50% {
+    transform: translate(-4px, 4px);
+  }
+  75% {
+    transform: translate(4px, -4px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #00ff00;
+  }
+  25% {
+    text-shadow: 0 0 10px #45b8fb;
+  }
+  75% {
+    text-shadow: 0 0 15px #ffc171;
+  }
+  100% {
+    text-shadow: 0 0 20px #ff00ff;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+    text-shadow: 0 20px 1px #f80303;
+  }
+}
+
+@keyframes pixelate {
+  0%,
+  100% {
+    filter: none;
+  }
+  50% {
+    filter: url(#pixelate);
+  }
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+  #welcome-section h1 {
+    font-size: 2rem;
+  }
+
+  #projects h2 {
+    font-size: 1.5rem;
+  }
+
+  .project-tile {
+    width: 100%;
+  }
+}
+
+/* Binary Glitch Text Style */
+.binary-glitch {
+  position: relative;
+  display: inline-block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Glitch Effect Animation */
+@keyframes binary-glitch {
+  0%,
+  100% {
+    opacity: 1;
+    filter: none;
+  }
+  10%,
+  90% {
+    opacity: 0.8;
+    filter: blur(1px);
+  }
+  20%,
+  80% {
+    opacity: 0.6;
+    filter: blur(2px);
+  }
+  30%,
+  70% {
+    opacity: 0.4;
+    filter: blur(3px);
+  }
+  40%,
+  60% {
+    opacity: 0.2;
+    filter: blur(4px);
+  }
+  50% {
+    opacity: 0;
+    filter: blur(5px);
+  }
+}
+
+.binary-glitch:hover {
+  animation: binary-glitch 0.2s ease-in-out;
+}
