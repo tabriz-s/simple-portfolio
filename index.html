@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <ul>
+        <li>
+          <a href="#welcome-section" class="binary-glitch" data-text="Home"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="#projects" class="binary-glitch" data-text="Projects"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="binary-glitch" data-text="Contact"
+            >Contact</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/tabriz-s"
+            id="profile-link"
+            target="_blank"
+            class="binary-glitch"
+            data-text="GitHub"
+            >GitHub</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section id="welcome-section">
+      <h1 class="glitch-text" data-text="Hello, I'm Tabriz">
+        Hello, I'm Tabriz
+      </h1>
+      <p class="binary-glitch" data-text="Scroll down to explore my projects!">
+        Scroll down to explore my projects!
+      </p>
+      <p>*I currently don't have a lot to show off :')*</p>
+      <div class="pixel-arrow">▼</div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>My Projects</h2>
+      <div class="project-grid">
+        <div class="project-tile">
+          <a href="https://example.com/project1" target="_blank">
+            <img
+              src="https://th.bing.com/th/id/OIP.nLcmXxAoA1vUGq0DCZFi6gHaEK?w=329&h=185&c=7&r=0&o=5&dpr=1.1&pid=1.7"
+              alt="Project 1"
+            />
+            <p>Project 1: Central Planning Dashboard</p>
+          </a>
+        </div>
+        <div class="project-tile">
+          <a href="https://example.com/project2" target="_blank">
+            <img
+              src="https://th.bing.com/th/id/OIP.fVoyJk6UJVvJoRkv2BgVRgHaEo?w=291&h=175&c=7&r=0&o=5&dpr=1.1&pid=1.7"
+              alt="Project 2"
+            />
+            <p>Project 2: Retro Game</p>
+          </a>
+        </div>
+        <div class="project-tile">
+          <a
+            href="https://postalofficeportal-frgkd9fqd8a3cfc6.centralus-01.azurewebsites.net/"
+            target="_blank"
+          >
+            <img
+              src="https://postalofficeportal-frgkd9fqd8a3cfc6.centralus-01.azurewebsites.net/App_Start/PostOfficeLogo.png"
+              alt="PISS"
+            />
+            <p>Project 3: Post Office Web App</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 class="glitch-text" data-text="Let's Connect!">Let's Connect!</h2>
+      <div class="contact-links">
+        <a
+          href="https://instagram.com/yourusername"
+          target="_blank"
+          class="btn contact-details"
+        >
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://facebook.com/yourusername" target="_blank">
+          <i class="fab fa-facebook"></i> Facebook
+        </a>
+        <a href="mailto:youremail@example.com">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+        <a href="https://discord.com/users/yourusername" target="_blank">
+          <i class="fab fa-discord"></i> Discord
+        </a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/yourusername" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        © 2025 Tabriz Sadredinov. Created for
+        <a href="https://freecodecamp.org" target="_blank">freeCodeCamp</a>.
+      </p>
+    </footer>
+
+    <script>
+      document.querySelectorAll('.binary-glitch').forEach((element) => {
+        element.addEventListener('mouseenter', () => {
+          const originalText = element.dataset.text
+          let interval
+
+          // Start the glitch effect
+          interval = setInterval(() => {
+            // Replace the text with random 1's and 0's
+            element.textContent = originalText
+              .split('')
+              .map(() => (Math.random() > 0.5 ? '1' : '0'))
+              .join('')
+          }, 50) // Adjust the speed of the glitch
+
+          // Stop the glitch effect after 0.5 seconds
+          setTimeout(() => {
+            clearInterval(interval)
+            element.textContent = originalText // Restore the original text
+          }, 550) // Match the duration of the CSS animation
+        })
+      })
+    </script>
+  </body>
+</html>
